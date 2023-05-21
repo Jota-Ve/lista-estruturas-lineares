@@ -1,0 +1,28 @@
+{
+    "editor.formatOnSave": true,
+    "cpplint.cpplintPath": "/usr/local/bin/cpplint",
+    "cpplint.root": "${workspaceFolder}/include",
+    "cpplint.repository": "${workspaceFolder}",
+    "clangd.arguments": [
+        "-log=verbose",
+        "-pretty",
+        "--background-index",
+        "--compile-commands-dir=${workspaceFolder}/build/",
+    ],
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "testMate.cpp.test.advancedExecutables": [
+        {
+            "pattern": "{build}/**/*{test}*"
+        }
+    ],
+    "files.associations": {
+        "*.cpp": "cpp",
+        "*.h": "cpp",
+        "*.hpp": "cpp",
+        "*.ixx": "cpp",
+        "*.cppm": "cpp",
+        "*.cc": "cpp",
+        "*.c": "cpp"
+    },
+    "cmake.sourceDirectory": "${workspaceFolder}/."
+}

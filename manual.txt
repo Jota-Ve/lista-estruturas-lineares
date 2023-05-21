@@ -1,0 +1,5 @@
+Considere o projeto chamado lista01. O uso fica simples, com regras básicas:
+O diretório src/ somente terá arquivos com extensão .cpp ou .cc (jamais .h, .hpp, .ixx ou .cppm)
+O diretório include/ terá uma pasta interna com o nome do projeto (no caso, lista01). Dentro da pasta lista01, somente existirão arquivos .h, .hpp, .ixx ou .cppm (jamais .cpp ou .cc)
+O diretório tests/ somente terá arquivos destinados a testes de funcionamento do seu projeto
+O arquivo com ponto de entrada (entrypoint) main(), ficará na pasta src/ (nunca no include/)

@@ -1,0 +1,13 @@
+UseColor: true Checks:>cppcoreguidelines-*,
+google-*,
+performance-*,
+-cppcoreguidelines-avoid-magic-numbers,
+-google-readability-todo,
+-performance-unnecessary-value-param,
+-google-readability-braces-around-statements,
+-cppcoreguidelines-non-private-member-variables-in-classes,
+-cppcoreguidelines-pro-type-cstyle-cast,
+-clang-diagnostic-builtin-macro-redefined,
+-google-readability-casting HeaderFilterRegex: ".*"
+FormatStyle: 'file'
+WarningsAsErrors: "*"
