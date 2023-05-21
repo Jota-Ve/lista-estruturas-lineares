@@ -3,7 +3,7 @@
 #include <fmt/core.h>
 
 #include <cassert>
-#include <lista-teorica-estruturas-lineares/01.hpp>
+#include <lista-teorica-estruturas-lineares/01-a.hpp>
 
 using fmt::print;
 
