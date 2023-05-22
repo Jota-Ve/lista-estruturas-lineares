@@ -43,7 +43,7 @@ class PilhaDeque {
 
   int tamanho() { return this->d.N; }
 
-  void test() {
+  void teste() {
     this->cria();
     assert(this->tamanho() == 0);
 
@@ -72,4 +72,4 @@ class PilhaDeque {
 static_assert(DequeTAD<Deque, char>);       // testa se Deque está correto
 static_assert(PilhaTAD<PilhaDeque, char>);  // testa se Pilha está correta
 
-#endif
+#endif  // LISTA_TEORICA_ESTRUTURAS_LINEARES_01_B_HPP_
