@@ -34,7 +34,9 @@
 *.exe
 *.out
 *.app
-build/aplicacao
+
+# Build é criada ao compilar
+build/
 
 ### CMake ###
 CMakeLists.txt.user
