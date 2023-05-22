@@ -2,6 +2,9 @@
 // 1. Considere um tipo chamado Deque, que inclui manipulação de dois extremos
 // em uma estrutura linear (como se operasse como Pilha e Fila simultaneamente).
 
+#ifndef LISTA_TEORICA_ESTRUTURAS_LINEARES_01_A_HPP_
+#define LISTA_TEORICA_ESTRUTURAS_LINEARES_01_A_HPP_
+
 #include <cassert>
 template <typename Agregado, typename Tipo>
 concept DequeTAD = requires(Agregado a, Tipo t) {
@@ -164,3 +167,5 @@ class Deque {
   }
 };
 static_assert(DequeTAD<Deque, char>);  // testa se Deque está correto
+
+#endif  // LISTA_TEORICA_ESTRUTURAS_LINEARES_01_A_HPP_

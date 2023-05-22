@@ -4,6 +4,7 @@
 
 #include <cassert>
 #include <lista-teorica-estruturas-lineares/01-a.hpp>
+#include <lista-teorica-estruturas-lineares/01-b.hpp>
 
 using fmt::print;
 
@@ -53,11 +54,13 @@ void test_01() {
   dq.fim();
   assert(dq.N == 0);
 
-  print("Todos os testes 01 passaram!\n");
+  print("Todos os testes 01-a passaram!\n");
 }
 
 int main() {
   test_01();
+  PilhaDeque pilhaDeq;
 
+  pilhaDeq.test();
   return 0;
 }
