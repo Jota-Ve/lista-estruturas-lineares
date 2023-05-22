@@ -5,17 +5,21 @@
 #ifndef LISTA_TEORICA_ESTRUTURAS_LINEARES_01_A_HPP_
 #define LISTA_TEORICA_ESTRUTURAS_LINEARES_01_A_HPP_
 
+#include <fmt/core.h>
+
 #include <cassert>
+using fmt::print;
+
 template <typename Agregado, typename Tipo>
 concept DequeTAD = requires(Agregado a, Tipo t) {
   // requer operação de consulta ao elemento 'inicio'
-  {a.inicio()};         // requer operação de consulta ao elemento 'fim'
-  {a.fim()};            // requer operação 'insereInicio' sobre tipo 't'
-  {a.insereInicio(t)};  // requer operação 'insereFim' sobre tipo 't'
-  {a.insereFim(t)};     // requer operação 'removeInicio' e retorna tipo 't'
-  {a.removeInicio()};   // requer operação 'removeFim' e retorna tipo 't'
-  {a.removeFim()};
-};
+  {a.inicio()};  // requer operação de consulta ao elemento 'fim' NOLINT
+  {a.fim()};     // requer operação 'insereInicio' sobre tipo 't' NOLINT
+  {a.insereInicio(t)};  // requer operação 'insereFim' sobre tipo 't' NOLINT
+  {a.insereFim(t)};  // requer operação 'removeInicio' e retorna tipo 't' NOLINT
+  {a.removeInicio()};  // requer operação 'removeFim' e retorna tipo 't' NOLINT
+  {a.removeFim()};     // NOLINT
+};                     // NOLINT
 
 /*1.a) Satisfaça as seguintes operações de um DequeTAD para o tipo ‘char’,
 utilizando uma estrutura Sequencial OU uma estrutura encadeada:*/
@@ -164,6 +168,48 @@ class Deque {
     this->N--;
     // Retorna o dado do Nó removido.
     return dado;
+  }
+
+  void insereNos(Deque* dq) {
+    dq->insereFim('D');
+    dq->insereFim('E');
+    dq->insereInicio('C');
+    dq->insereFim('F');
+    dq->insereInicio('B');
+    dq->insereInicio('A');
+    dq->insereFim('G');
+    dq->insereFim('H');
+    dq->insereFim('I');
+    dq->insereFim('J');
+    assert(dq->N == 10);
+  }
+
+  void teste() {
+    Deque dq;
+    dq.inicio();
+
+    insereNos(&dq);
+    int N = dq.N;
+    assert(dq.removeFim() == 'J');
+    assert(dq.removeFim() == 'I');
+    assert(dq.removeFim() == 'H');
+    assert(dq.N == (N -= 3));
+
+    assert(dq.removeInicio() == 'A');
+    assert(dq.removeInicio() == 'B');
+    assert(dq.N == (N -= 2));
+
+    while (dq.N > 0) {
+      dq.removeInicio();
+      N--;
+    }
+    assert(dq.N == N && dq.N == 0);
+
+    this->insereNos(&dq);
+    dq.fim();
+    assert(dq.N == 0);
+
+    print("Todos os testes 01-a passaram!\n");
   }
 };
 static_assert(DequeTAD<Deque, char>);  // testa se Deque está correto
