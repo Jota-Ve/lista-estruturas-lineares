@@ -27,17 +27,43 @@ class FilaDeque {
   Deque d;  // Deque para ‘char’ (veja exercício anterior)
   // SOMENTE espaço auxiliar CONSTANTE aqui (nenhum vetor, lista, etc)
   // implementar métodos do TAD Fila
+
+  // *Para implementar uma Fila utilizando um Deque, é necessário obedecer o
+  //  *padrão FIFO, onde o primeiro elemento a entrar é o primeiro a sair. Ou
+  //  *seja, deve-se escolher um 'lado' do deque para adicionar dados, e outro
+  //  *para remover, simulando assim o comportamento de uma fila.
+
   void cria() { this->d.inicio(); }
 
   void libera() { this->d.fim(); }
 
-  char frente() { return this->d.primeiro->dado; }
+  // * Θ(1), pois executa apenas 2 operações de desreferenciação, ambas Θ(1).
+  char frente() {
+    /* Como o lado escolhido para inserir dados foi o Fim, então frente() deve
+      retornar o dado apontado pelo ponteiro d.primeiro, que aponta para o
+      início do Deque.*/
+    return this->d.primeiro->dado;
+  }
 
-  void enfileira(char dado) { this->d.insereFim(dado); }
+  // Θ(1), pois apenas executa uma função Θ(1).
+  void enfileira(char dado) {
+    /* Para simular uma fila, os dados sempre serão inseridos pelo fim do
+      Deque.*/
+    this->d.insereFim(dado);
+  }
 
-  char desenfileira() { return this->d.removeInicio(); }
+  // Θ(1), pois apenas executa uma função Θ(1).
+  char desenfileira() {
+    /* Para simular uma fila, os dados sempre serão removidos pelo início do
+      Deque.*/
+    return this->d.removeInicio();
+  }
 
-  int tamanho() { return this->d.N; }
+  // Θ(1), pois apenas executa uma desreferenciação.
+  int tamanho() {
+    // Retorna o tamanho do Deque. Θ(1)
+    return this->d.N;
+  }
 
   void teste() {
     this->cria();
