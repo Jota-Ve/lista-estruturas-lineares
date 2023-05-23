@@ -35,7 +35,7 @@ class PilhaDeque {
 
   void libera() { this->d.fim(); }
 
-  char topo() { return this->d.removeFim(); }
+  char topo() { return this->d.ultimo->dado; }
 
   void empilha(char dado) { this->d.insereFim(dado); }
 
@@ -62,6 +62,11 @@ class PilhaDeque {
     this->empilha('C');
     this->empilha('B');
     this->empilha('A');
+    assert(this->topo() == 'A');
+    assert(this->topo() == 'A');
+    assert(this->topo() == 'A');
+    assert(this->tamanho() == 3);
+
     this->libera();
     assert(this->tamanho() == 0);
 
