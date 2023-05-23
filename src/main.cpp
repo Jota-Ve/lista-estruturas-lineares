@@ -5,6 +5,7 @@
 #include <cassert>
 #include <lista-teorica-estruturas-lineares/01-a.hpp>
 #include <lista-teorica-estruturas-lineares/01-b.hpp>
+#include <lista-teorica-estruturas-lineares/01-c.hpp>
 
 using fmt::print;
 
@@ -18,8 +19,10 @@ int somaIntervalo(int primeiro, int ultimo) {
 int main() {
   Deque deq;
   PilhaDeque pilhaDeq;
+  FilaDeque filaDeq;
 
   deq.teste();
   pilhaDeq.teste();
+  filaDeq.teste();
   return 0;
 }
