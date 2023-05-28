@@ -7,6 +7,7 @@
 #include <lista-teorica-estruturas-lineares/01-b.hpp>
 #include <lista-teorica-estruturas-lineares/01-c.hpp>
 #include <lista-teorica-estruturas-lineares/02.hpp>
+#include <lista-teorica-estruturas-lineares/03.hpp>
 
 using fmt::print;
 
@@ -19,13 +20,19 @@ int somaIntervalo(int primeiro, int ultimo) {
 
 int main() {
   Deque deq;
-  PilhaDeque pilhaDeq;
-  FilaDeque filaDeq;
-  Pilha2F pilha2f;
-
   deq.teste();
+
+  PilhaDeque pilhaDeq;
   pilhaDeq.teste();
+
+  FilaDeque filaDeq;
   filaDeq.teste();
+
+  Pilha2F pilha2f;
   pilha2f.teste();
+
+  Fila2P fila2p;
+  fila2p.teste();
+
   return 0;
 }
