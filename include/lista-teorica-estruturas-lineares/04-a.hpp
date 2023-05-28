@@ -13,7 +13,7 @@
 #include <queue>
 #include <stack>
 
-void inverte(std::stack<char>* p) {
+void invertePilhaComFila(std::stack<char>* p) {
   std::queue<char> f;  // somente essa fila e mais espaço auxiliar constante
 
   // Passa todos os elementos da Pilha para a Fila
@@ -36,7 +36,7 @@ void testeInvertePilhaComFila() {
   pilha.push('C');
   pilha.push('D');
 
-  inverte(&pilha);
+  invertePilhaComFila(&pilha);
 
   assert(pilha.top() == 'A');
   pilha.pop();

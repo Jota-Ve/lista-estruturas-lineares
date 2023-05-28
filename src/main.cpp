@@ -9,6 +9,7 @@
 #include <lista-teorica-estruturas-lineares/02.hpp>
 #include <lista-teorica-estruturas-lineares/03.hpp>
 #include <lista-teorica-estruturas-lineares/04-a.hpp>
+#include <lista-teorica-estruturas-lineares/04-b.hpp>
 
 using fmt::print;
 
@@ -36,6 +37,7 @@ int main() {
   fila2p.teste();
 
   testeInvertePilhaComFila();
+  testeInvertePilhaCom2Pilhas();
 
   return 0;
 }
