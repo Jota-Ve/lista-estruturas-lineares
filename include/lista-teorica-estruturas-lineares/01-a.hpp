@@ -1,6 +1,7 @@
 
-// 1. Considere um tipo chamado Deque, que inclui manipulação de dois extremos
-// em uma estrutura linear (como se operasse como Pilha e Fila simultaneamente).
+//* 1. Considere um tipo chamado Deque, que inclui manipulação de dois extremos
+//* em uma estrutura linear (como se operasse como Pilha e Fila
+//* simultaneamente).
 
 #ifndef LISTA_TEORICA_ESTRUTURAS_LINEARES_01_A_HPP_
 #define LISTA_TEORICA_ESTRUTURAS_LINEARES_01_A_HPP_
@@ -8,21 +9,12 @@
 #include <fmt/core.h>
 
 #include <cassert>
+#include <lista-teorica-estruturas-lineares/DequeTAD.hpp>
+
 using fmt::print;
 
-template <typename Agregado, typename Tipo>
-concept DequeTAD = requires(Agregado a, Tipo t) {
-  // requer operação de consulta ao elemento 'inicio'
-  {a.inicio()};  // requer operação de consulta ao elemento 'fim' NOLINT
-  {a.fim()};     // requer operação 'insereInicio' sobre tipo 't' NOLINT
-  {a.insereInicio(t)};  // requer operação 'insereFim' sobre tipo 't' NOLINT
-  {a.insereFim(t)};  // requer operação 'removeInicio' e retorna tipo 't' NOLINT
-  {a.removeInicio()};  // requer operação 'removeFim' e retorna tipo 't' NOLINT
-  {a.removeFim()};     // NOLINT
-};                     // NOLINT
-
-/*1.a) Satisfaça as seguintes operações de um DequeTAD para o tipo ‘char’,
-utilizando uma estrutura Sequencial OU uma estrutura encadeada:*/
+//* 1.a) Satisfaça as seguintes operações de um DequeTAD para o tipo ‘char’,
+//* utilizando uma estrutura Sequencial OU uma estrutura encadeada:
 
 class No {
   /* Classe No com 'char dado' e 2 ponteiros:

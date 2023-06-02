@@ -1,12 +1,12 @@
+
+//* 2) Implemente uma estrutura que satisfaz o TAD Pilha para o tipo ‘char’ e
+//* somente utiliza duas Filas como armazenamento interno (mais espaço
+//* constante):
+
 #ifndef LISTA_TEORICA_ESTRUTURAS_LINEARES_02_HPP_
 #define LISTA_TEORICA_ESTRUTURAS_LINEARES_02_HPP_
 
-/*
-* 2) Implemente uma estrutura que satisfaz o TAD Pilha para o tipo ‘char’ e
-somente utiliza duas Filas como armazenamento interno (mais espaço constante):
-*/
-
-#include <lista-teorica-estruturas-lineares/01-b.hpp>
+#include <lista-teorica-estruturas-lineares/PilhaTAD.hpp>
 #include <queue>  // Fila genérica em C++
 
 class Pilha2F {

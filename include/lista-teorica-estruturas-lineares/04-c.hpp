@@ -1,11 +1,11 @@
 
-#ifndef LISTA_TEORICA_ESTRUTURAS_LINEARES_04_C_HPP_
-#define LISTA_TEORICA_ESTRUTURAS_LINEARES_04_C_HPP_
-
 // * 4) Escreva um algoritmo que dada uma pilha padrão P externa passada como
 // * parâmetro, inverte o conteúdo de P. Somente utilize as estruturas extras
 // * permitidas como armazenamento externo(mais espaço constante)
 // * c) Uma Pilha
+
+#ifndef LISTA_TEORICA_ESTRUTURAS_LINEARES_04_C_HPP_
+#define LISTA_TEORICA_ESTRUTURAS_LINEARES_04_C_HPP_
 
 #include <fmt/core.h>
 

@@ -1,3 +1,8 @@
+
+//* 1.b) Implemente uma estrutura PilhaDeque para tipo ‘char’, utilizando
+//* somente um Deque como armazenamento interno e mais espaço auxiliar
+//* constante:
+
 #ifndef LISTA_TEORICA_ESTRUTURAS_LINEARES_01_B_HPP_
 #define LISTA_TEORICA_ESTRUTURAS_LINEARES_01_B_HPP_
 
@@ -6,24 +11,9 @@
 #include <cassert>
 
 #include "lista-teorica-estruturas-lineares/01-a.hpp"
+#include "lista-teorica-estruturas-lineares/PilhaTAD.hpp"
 
 using fmt::print;
-
-/* 1.b*) Implemente uma estrutura PilhaDeque para tipo ‘char’, utilizando
-somente um Deque como armazenamento interno e mais espaço auxiliar
-constante:*/
-
-template <typename Agregado, typename Tipo>
-concept PilhaTAD = requires(Agregado a, Tipo t) {
-  // requer operação 'topo'
-  {a.topo()};  // NOLINT
-  // requer operação 'empilha' sobre tipo 't'
-  {a.empilha(t)};  // NOLINT
-  // requer operação 'desempilha'
-  {a.desempilha()};  // NOLINT
-  // requer operação 'tamanho'
-  {a.tamanho()};  // NOLINT
-};                // NOLINT
 
 class PilhaDeque {
  public:

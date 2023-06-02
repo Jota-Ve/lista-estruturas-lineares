@@ -1,7 +1,7 @@
 
-/*1.c*) Implemente uma estrutura FilaDeque para tipo ‘char’, utilizando
-somente um Deque como armazenamento interno e mais espaço auxiliar
-constante:*/
+//* 1.c) Implemente uma estrutura FilaDeque para tipo ‘char’, utilizando
+//* somente um Deque como armazenamento interno e mais espaço auxiliar
+//* constante:
 
 #ifndef LISTA_TEORICA_ESTRUTURAS_LINEARES_01_C_HPP_
 #define LISTA_TEORICA_ESTRUTURAS_LINEARES_01_C_HPP_
@@ -9,18 +9,7 @@ constante:*/
 #include <cassert>
 
 #include "lista-teorica-estruturas-lineares/01-a.hpp"
-
-template <typename Agregado, typename Tipo>
-concept FilaTAD = requires(Agregado a, Tipo t) {
-  // requer operação 'frente'
-  {a.frente()};  // NOLINT
-  // requer operação 'enfileira' sobre tipo 't'
-  {a.enfileira(t)};  // NOLINT
-  // requer operação 'desenfileira'
-  {a.desenfileira()};  // NOLINT
-  // requer operação 'tamanho'
-  {a.tamanho()};  // NOLINT
-};                // NOLINT
+#include "lista-teorica-estruturas-lineares/FilaTAD.hpp"
 
 class FilaDeque {
  public:
