@@ -19,14 +19,17 @@ class InversorDeFila {
   void inverteCom1Pilha(std::queue<char>* f) {
     std::stack<char> p;  // somente essa pilha e mais espaço auxiliar constante
 
+    // O(N), Passa os elementos da Fila para a Pilha.
     while (f->size()) {
-      p.push(f->front());
-      f->pop();
+      p.push(f->front());  // Θ(1)
+      f->pop();            // Θ(1)
     }
 
+    // O(N), Devolve os elementos da Pilha para a Fila, invertendo a ordem pois
+    // a Pilha é FILO e a fila é FIFO.
     while (p.size()) {
-      f->push(p.top());
-      p.pop();
+      f->push(p.top());  // Θ(1)
+      p.pop();           // Θ(1)
     }
   }
 
