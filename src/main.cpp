@@ -11,6 +11,7 @@
 #include <lista-teorica-estruturas-lineares/04-a.hpp>
 #include <lista-teorica-estruturas-lineares/04-b.hpp>
 #include <lista-teorica-estruturas-lineares/04-c.hpp>
+#include <lista-teorica-estruturas-lineares/05-a.hpp>
 
 using fmt::print;
 
@@ -37,8 +38,12 @@ int main() {
   Fila2P fila2p;
   fila2p.teste();
 
+  InversorDeFila invFila;
+
   testeInvertePilhaComFila();
   testeInvertePilhaCom2Pilhas();
   testeInvertePilhaCom1Pilha();
+  invFila.teste();
+
   return 0;
 }
