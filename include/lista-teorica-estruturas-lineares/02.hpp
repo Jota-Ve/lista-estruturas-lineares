@@ -6,6 +6,9 @@
 #ifndef LISTA_TEORICA_ESTRUTURAS_LINEARES_02_HPP_
 #define LISTA_TEORICA_ESTRUTURAS_LINEARES_02_HPP_
 
+#include <fmt/core.h>
+
+#include <cassert>
 #include <lista-teorica-estruturas-lineares/PilhaTAD.hpp>
 #include <queue>  // Fila genérica em C++
 
@@ -76,7 +79,7 @@ class Pilha2F {
     }
 
     assert(this->tamanho() == 0);
-    print("Todos os testes 02 passaram!\n");
+    fmt::print("Todos os testes 02 passaram!\n");
   }
 };
 

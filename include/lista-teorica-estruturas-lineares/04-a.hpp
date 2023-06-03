@@ -47,6 +47,6 @@ void testeInvertePilhaComFila() {
   assert(pilha.top() == 'D');
   pilha.pop();
 
-  print("Todos os testes 04-a passaram!\n");
+  fmt::print("Todos os testes 04-a passaram!\n");
 }
 #endif  // LISTA_TEORICA_ESTRUTURAS_LINEARES_04_A_HPP_

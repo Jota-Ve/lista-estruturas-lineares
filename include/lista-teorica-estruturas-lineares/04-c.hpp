@@ -103,6 +103,6 @@ void testeInvertePilhaCom1Pilha() {
   assert(p.top() == 'D');
   p.pop();
 
-  print("Todos os testes 04-c passaram!\n");
+  fmt::print("Todos os testes 04-c passaram!\n");
 }
 #endif  // LISTA_TEORICA_ESTRUTURAS_LINEARES_04_C_HPP_

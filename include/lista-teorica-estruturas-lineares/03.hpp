@@ -6,6 +6,9 @@
 // somente utiliza duas Pilhas como armazenamento interno (mais espaço
 // constante):
 
+#include <fmt/core.h>
+
+#include <cassert>
 #include <lista-teorica-estruturas-lineares/FilaTAD.hpp>
 #include <stack>  // Pilha genérica em C++ //NOLINT
 
@@ -72,7 +75,7 @@ class Fila2P {
 
     while (this->tamanho()) this->desenfileira();
     assert(this->tamanho() == 0);
-    print("Todos os testes 03 passaram!\n");
+    fmt::print("Todos os testes 03 passaram!\n");  // NOLINT
   }
 };
 static_assert(FilaTAD<Fila2P, char>);  // testa se Fila está correta
