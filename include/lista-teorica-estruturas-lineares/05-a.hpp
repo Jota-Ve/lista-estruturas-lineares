@@ -33,7 +33,41 @@ class InversorDeFila {
     }
   }
 
-  void teste() { this->testeInverte('a'); }
+  //* b) Duas Filas
+  void inverteCom2Filas(std::queue<char>* f) {
+    std::queue<char> f1;
+    std::queue<char> f2;
+
+    // O(N)
+    while (f->size()) {
+      // O(N), Move N-1 elementos de f para f1
+      while (f->size() > 1) {
+        f1.push(f->front());  // O(1)
+        f->pop();             // O(1)
+      }
+
+      // O(1), Separa o ultimo de f para f2
+      f2.push(f->front());
+      f->pop();
+
+      // O(N), Devolve f1 para f
+      while (f1.size()) {
+        f->push(f1.front());  // O(1)
+        f1.pop();             // O(1)
+      }
+    }
+
+    // O(N), devolve f2 para f na ordem inversa
+    while (f2.size()) {
+      f->push(f2.front());  // O(1)
+      f2.pop();             // O(1)
+    }
+  }
+
+  void teste() {
+    this->testeInverte('a');
+    this->testeInverte('b');
+  }
 
  private:
   void testeInverte(char letra) {
@@ -45,6 +79,8 @@ class InversorDeFila {
 
     if (letra == 'a') {
       this->inverteCom1Pilha(&f);
+    } else if (letra == 'b') {
+      this->inverteCom2Filas(&f);
     } else {
       fmt::print("Letra da questão 5 não reconhecida: {}", letra);
       assert(false);
