@@ -11,7 +11,7 @@
 #include <lista-teorica-estruturas-lineares/04-a.hpp>
 #include <lista-teorica-estruturas-lineares/04-b.hpp>
 #include <lista-teorica-estruturas-lineares/04-c.hpp>
-#include <lista-teorica-estruturas-lineares/05-a.hpp>
+#include <lista-teorica-estruturas-lineares/05.hpp>
 
 using fmt::print;
 

@@ -3,8 +3,8 @@
 //* parâmetro, inverte o conteúdo de F. Somente utilize as estruturas extras
 //* permitidas como armazenamento externo (mais espaço constante)
 
-#ifndef LISTA_TEORICA_ESTRUTURAS_LINEARES_05_A_HPP_
-#define LISTA_TEORICA_ESTRUTURAS_LINEARES_05_A_HPP_
+#ifndef LISTA_TEORICA_ESTRUTURAS_LINEARES_05_HPP_
+#define LISTA_TEORICA_ESTRUTURAS_LINEARES_05_HPP_
 
 #include <cassert>
 #include <functional>
@@ -99,4 +99,4 @@ class InversorDeFila {
   }
 };
 
-#endif  // LISTA_TEORICA_ESTRUTURAS_LINEARES_05_A_HPP_
+#endif  // LISTA_TEORICA_ESTRUTURAS_LINEARES_05_HPP_
