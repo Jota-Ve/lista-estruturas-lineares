@@ -29,11 +29,13 @@ class PilhaMin {
   int tamanho() { return this->N; }
 
   int desempilha();
+
   void empilha(int t) {
     No* novoNo = new No{.dado = t, .prox = this->ultimo};
     this->ultimo = novoNo;
     this->N++;
   }
+
   int obterMinimo();
 
   // mais métodos auxiliares
@@ -49,8 +51,13 @@ class PilhaMin {
   }
 
   void insereDado(int dado) {
-    if (dado <= this->dados.back()) {
-      this->dados.push_back(dado);
+    /*Insere o dado em um Vetor em ordem decrescente. Desta forma, o menor valor
+     * sempre pode ser obtido em O(1) lendo o último elemento do Vetor.*/
+
+    /*Se o Vetor estiver vazio ou 'dado' for <= o último (menor) dado, insere no
+     * final e retorna.*/
+    if (this->dados.empty() || dado <= this->dados.back()) {  // O(1)
+      this->dados.push_back(dado);                            // O(1)
       return;
     }
 
