@@ -12,6 +12,7 @@
 #include <lista-teorica-estruturas-lineares/04-b.hpp>
 #include <lista-teorica-estruturas-lineares/04-c.hpp>
 #include <lista-teorica-estruturas-lineares/05.hpp>
+#include <lista-teorica-estruturas-lineares/06.hpp>
 
 using fmt::print;
 
@@ -45,5 +46,7 @@ int main() {
   testeInvertePilhaCom1Pilha();
   invFila.teste();
 
+  PilhaMin pilhaMin;
+  pilhaMin.teste();
   return 0;
 }

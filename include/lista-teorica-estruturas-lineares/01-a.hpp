@@ -16,7 +16,7 @@ using fmt::print;
 //* 1.a) Satisfaça as seguintes operações de um DequeTAD para o tipo ‘char’,
 //* utilizando uma estrutura Sequencial OU uma estrutura encadeada:
 
-class No {
+class NoDeque {
   /* Classe No com 'char dado' e 2 ponteiros:
     'ant': Será o ponteiro que aponta para o 'Nó anterior'. Com exceção
       do primeiro Nó, que apontará para zero, todos os Nós devem possuir
@@ -31,8 +31,8 @@ class No {
   */
  public:
   char dado;
-  No* ant;
-  No* prox;
+  NoDeque* ant;
+  NoDeque* prox;
 };
 
 class Deque {
@@ -40,8 +40,8 @@ class Deque {
   // Referências para o primeiro e último Nó do Deque, tornando-os sempre
   // acessíveis em Θ(1) pois não será necessário percorrer o Deque para
   // encontrá-los.
-  No* primeiro;
-  No* ultimo;
+  NoDeque* primeiro;
+  NoDeque* ultimo;
 
   // Contador de Nós/elementos no Deque.
   int N;
@@ -69,7 +69,8 @@ class Deque {
       Como o novoNo será inserido no início, seu ponteiro para o Nó
       anterior é inicializado com zero, e o ponteiro para o próximo
       Nó recebe a referência para o primeiro Nó atual.*/
-    No* novoNo = new No{.dado = dado, .ant = 0, .prox = this->primeiro};
+    NoDeque* novoNo =
+        new NoDeque{.dado = dado, .ant = 0, .prox = this->primeiro};
 
     if (this->N == 0)
       // Se o deque estiver vazio, o ponteiro para o último Nó também aponta
@@ -93,7 +94,7 @@ class Deque {
     /*Cria o novoNo, atribuindo o dado a ser inserido.
       Por estar sendo inserido no fim, o ponteiro ant aponta para o último Nó
       atual, e o ponteiro prox é inicializado com zero.*/
-    No* novoNo = new No{.dado = dado, .ant = this->ultimo, .prox = 0};
+    NoDeque* novoNo = new NoDeque{.dado = dado, .ant = this->ultimo, .prox = 0};
 
     if (this->N == 0)
       /*Se o deque está vazio, o ponteiro para o primeiro Nó também aponta para
@@ -114,7 +115,7 @@ class Deque {
   char removeInicio() {
     // Copia a referência ao primeiro Nó, para que a memória possa ser liberada
     // em breve.
-    No* primeiro = this->primeiro;
+    NoDeque* primeiro = this->primeiro;
     // Copia o dado do primeiro Nó, para que seja retornado ao final.
     char dado = primeiro->dado;
 
@@ -139,7 +140,7 @@ class Deque {
   char removeFim() {
     // Copia a referência ao último Nó, para que a memória possa ser liberada
     // em breve.
-    No* ultimo = this->ultimo;
+    NoDeque* ultimo = this->ultimo;
 
     // Copia o dado do último Nó, para que seja retornado ao final.
     char dado = ultimo->dado;
