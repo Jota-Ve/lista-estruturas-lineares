@@ -27,27 +27,27 @@ class PilhaMin {
   std::vector<int8_t> dados;
   int N;
 
-  int topo() { return this->ultimo->dado; }
+  int topo() { return this->ultimo->dado; }  // Θ(1)
 
-  int tamanho() { return this->N; }
+  int tamanho() { return this->N; }  // Θ(1)
 
-  int desempilha() {
-    No* ultimo = this->ultimo;
-    int dado = ultimo->dado;
+  int desempilha() {            // Θ(N)
+    No* ultimo = this->ultimo;  // Θ(1)
+    int dado = ultimo->dado;    // Θ(1)
 
-    this->ultimo = this->ultimo->prox;
+    this->ultimo = this->ultimo->prox;  // Θ(1)
 
-    this->removeDado(dado);
-    delete ultimo;
-    this->N--;
-    return dado;
+    this->removeDado(dado);  // Θ(N)
+    delete ultimo;           // Θ(1)
+    this->N--;               // Θ(1)
+    return dado;             // Θ(1)
   }
 
-  void empilha(int t) {
-    No* novoNo = new No{.dado = t, .prox = this->ultimo};
-    this->insereDado(t);
-    this->ultimo = novoNo;
-    this->N++;
+  void empilha(int t) {                                    // Ω(1), O(N)
+    No* novoNo = new No{.dado = t, .prox = this->ultimo};  // Θ(1)
+    this->insereDado(t);                                   // Ω(1), O(N)
+    this->ultimo = novoNo;                                 // Θ(1)
+    this->N++;                                             // Θ(1)
   }
 
   int obterMinimo() { return this->dados.back(); }
@@ -101,21 +101,22 @@ class PilhaMin {
   }
 
  private:
-  void insereDado(int dado) {
+  void insereDado(int dado) {  // Ω(1), O(N)
     /*Insere o dado em um Vetor em ordem decrescente. Desta forma, o menor valor
      * sempre pode ser obtido em O(1) lendo o último elemento do Vetor.*/
 
     /*Se o Vetor estiver vazio ou 'dado' for <= o último (menor) dado, insere no
      * final e retorna.*/
-    if (this->dados.empty() || dado <= this->dados.back()) {  // O(1)
-      this->dados.push_back(dado);                            // O(1)
-      return;
+    if (this->dados.empty() || dado <= this->dados.back()) {  // Θ(1)
+      this->dados.push_back(dado);                            // Θ(1)
+      return;                                                 // Θ(1)
     }
 
     /*Percorre o vetor até achar a posição de um elemento <= o dado a ser
      * inserido. Quando ao encontrar, insere o dado nessa posição, deslocando
      * para 'frente' os N-i dados posteriores em 1 posição*/
-    for (int8_t i = 0; i < this->dados.size(); i++) {
+    for (int8_t i = 0; i < this->dados.size();
+         i++) {  // Θ(N), cresce inversamente proporcional ao comando insert
       if (this->dados.at(i) <= dado) {                      // O(1)
         this->dados.insert(this->dados.begin() + i, dado);  // O(N)
         return;
@@ -123,8 +124,8 @@ class PilhaMin {
     }
   }
 
-  void removeDado(int dado) {                          // O(N)
-    for (int8_t i = 0; i < this->dados.size(); i++) {  // O(N)
+  void removeDado(int dado) {                          // Θ(N)
+    for (int8_t i = 0; i < this->dados.size(); i++) {  // Θ(N)
       if (this->dados.at(i) == dado) {
         // Ω(1) quando é o último elemento, do contrário O(N) Remove posição i e
         // desloca N-i elementos
