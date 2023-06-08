@@ -19,41 +19,46 @@ class Pilha2F {
   // SOMENTE espaço auxiliar CONSTANTE aqui (nenhum vetor, lista, etc)
   // implementar métodos do TAD Pilha
 
-  char topo() {
-    if (this->f1.empty()) return f2.back();
-    return f1.back();
+  char topo() {  // Retorna o último da fila não vazia  Θ(1)
+    if (this->f1.empty()) return f2.back();  // Θ(1)
+    return f1.back();                        // Θ(1)
   }
 
-  void empilha(char dado) {
-    if (this->f1.empty()) return f2.push(dado);
-    f1.push(dado);
+  void empilha(char dado) {  // Adiciona ao final da fila não vazia Θ(1)
+    if (this->f1.empty()) return f2.push(dado);  // Θ(1)
+    f1.push(dado);                               // Θ(1)
   }
 
   char desempilha() {
-    char dado = this->topo();
-    if (f1.empty()) {
-      while (f2.size() > 1) {
-        f1.push(f2.front());
-        f2.pop();
+    /*Salva o topo
+     */
+    char dado = this->topo();  // salva o ultimo da fila Θ(1)
+
+    // Esvazia a fila que tiver dados passando para a outra fila.
+    // Deleta o último eleemnto da fila
+    if (f1.empty()) {          // Ω(1), O(N)
+      while (f2.size() > 1) {  // Θ(N)
+        f1.push(f2.front());   // Θ(1)
+        f2.pop();              // Θ(1)
       }
-      f2.pop();
+      f2.pop();  // Θ(1)
       assert(f2.size() == 0);
 
     } else {
-      while (f1.size() > 1) {
-        f2.push(f1.front());
-        f1.pop();
+      while (f1.size() > 1) {  // Ω(1), O(N)
+        f2.push(f1.front());   // Θ(1)
+        f1.pop();              // Θ(1)
       }
-      f1.pop();
+      f1.pop();  // Θ(1)
       assert(f1.size() == 0);
     }
 
-    return dado;
+    return dado;  // Θ(1)
   }
 
-  int tamanho() {
-    if (f1.empty()) return f2.size();
-    return f1.size();
+  int tamanho() {                      // Θ(1)
+    if (f1.empty()) return f2.size();  // Θ(1)
+    return f1.size();                  // Θ(1)
   }
 
   void teste() {

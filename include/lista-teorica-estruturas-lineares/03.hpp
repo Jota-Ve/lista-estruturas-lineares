@@ -19,28 +19,28 @@ class Fila2P {
   // SOMENTE espaço auxiliar CONSTANTE aqui (nenhum vetor, lista, etc)
   // implementar métodos do TAD Fila
 
-  char frente() {
-    if (this->p2.empty()) this->transfereP1ParaP2();
-    return this->p2.top();
+  char frente() {                                     // Θ(N)
+    if (this->p2.empty()) this->transfereP1ParaP2();  // Θ(N)
+    return this->p2.top();                            // Θ(1)
   }
 
-  void enfileira(char dado) { this->p1.push(dado); }
+  void enfileira(char dado) { this->p1.push(dado); }  // Ω(1)
 
-  void transfereP1ParaP2() {
-    while (!this->p1.empty()) {
-      p2.push(p1.top());
-      p1.pop();
+  void transfereP1ParaP2() {     // Θ(N)
+    while (!this->p1.empty()) {  // Θ(N)
+      p2.push(p1.top());         // Θ(1)
+      p1.pop();                  // Θ(1)
     }
   }
 
-  char desenfileira() {
-    if (this->p2.empty()) this->transfereP1ParaP2();
-    char dado = p2.top();
-    p2.pop();
-    return dado;
+  char desenfileira() {                               // Θ(N)
+    if (this->p2.empty()) this->transfereP1ParaP2();  // Θ(N)
+    char dado = p2.top();                             // Θ(1)
+    p2.pop();                                         // Θ(1)
+    return dado;                                      // Θ(1)
   }
 
-  int tamanho() { return this->p1.size() + this->p2.size(); }
+  int tamanho() { return this->p1.size() + this->p2.size(); }  // Θ(1)
 
   void teste() {
     while (this->tamanho()) this->desenfileira();

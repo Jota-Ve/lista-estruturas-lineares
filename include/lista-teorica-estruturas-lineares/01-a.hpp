@@ -47,7 +47,7 @@ class Deque {
   int N;
 
   // Θ(1), sempre serão executadas 3 simples operações Θ(1) de atribuição
-  void inicio() {
+  void inicio() {  // Θ(1)
     /* 'primeiro' e 'ultimo' ambos apontam para zero, pois o deque está vazio.
       'N', contador de elementos no Deque, também inicializado com zero.*/
     this->primeiro = 0;
@@ -163,7 +163,7 @@ class Deque {
     return dado;
   }
 
-  void insereNos(Deque* dq) {
+  void insereNos(Deque* dq) {  // Função auxiliar de teste
     dq->insereFim('D');
     dq->insereFim('E');
     dq->insereInicio('C');
